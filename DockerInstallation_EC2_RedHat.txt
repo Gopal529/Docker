@@ -1,0 +1,17 @@
+1. To install Docker on an AWS EC2 instance, we’ll enable the “Red Hat Enterprise Linux Server 7 Extra(RPMs)” yum repository that, by default, is disabled.
+$ sudo yum repolist disabled
+
+
+2.Use the yum-config-manager to enable the repo:
+$ sudo yum-config-manager --enable "Red Hat Enterprise Linux Server 7 Extra(RPMs)"
+
+3.Next, you should search for the Docker package and install it. Yum will take care of its dependencies.
+$ sudo yum search docker
+
+4.$ sudo yum -y install docker
+
+5.Once the Docker-related packages are installed, you should enable and start the docker service.
+$ sudo systemctl enable docker
+
+6.$ sudo systemctl start docker
+  $ sudo systemctl status docker
